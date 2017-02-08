@@ -5,7 +5,7 @@ module Sidekiq
 
   def self.load_json(string)
     Marshal.load(string)
-  rescue ex
+  rescue => ex
     log = Logger.new('/tmp/sq_marshal.log')
     log.info ex.message
     log.info string.class
